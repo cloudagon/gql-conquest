@@ -1,0 +1,16 @@
+{
+  "name": "gql-conquest",
+  "private": true,
+  "scripts": {
+    "test": "yarn workspaces foreach run test",
+    "type:check": "yarn workspaces foreach run type:check"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^15.12.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  }
+}

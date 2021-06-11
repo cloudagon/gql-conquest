@@ -1,2 +1,2 @@
 # gql-conquest
-A collection of packages using graphql to conquer the ecosystem.
+A collection of packages using GraphQL to conquer the ecosystem.
