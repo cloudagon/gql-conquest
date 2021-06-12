@@ -1,15 +1,30 @@
 {
-  "name": "gql-conquest",
+  "name": "root",
   "private": true,
   "scripts": {
-    "test": "yarn workspaces foreach run test",
-    "type:check": "yarn workspaces foreach run type:check"
+    "test": "npm exec --workspaces -- jest",
+    "type:check": "npm exec --workspaces -- tsc --noEmit",
+    "lint": "npm exec --workspaces -- eslint ."
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.12.2",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.4",
+    "json5": "^1.0.1",
+    "prettier": "^2.3.1",
+    "ts-jest": "^27.0.3",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   }

@@ -1,6 +1,6 @@
-import querySelector from "src";
 import gql from 'graphql-tag'
-import { invalidFieldNameError, noSelectorArgError } from "src/errors";
+import querySelector from 'src'
+import { invalidFieldNameError, noSelectorArgError } from 'src/errors'
 
 const rootDiv = document.createElement('div')
 
@@ -40,13 +40,15 @@ sectionSpan.textContent = 'this is a section'
 
 section.append(h1WithClassName, h2WithClassName, sectionSpan)
 
-
 describe('div top level', () => {
-  const query = querySelector(gql`
+  const query = querySelector(
+    gql`
     {
       p: all(s: "p")
       section: one(s: "#${sectionId}")
-    }`, rootDiv)
+    }`,
+    rootDiv,
+  )
 
   it('has two ps', () => {
     const rootDivPs = rootDiv.querySelectorAll('p')
@@ -58,23 +60,27 @@ describe('div top level', () => {
   })
 })
 
-const headingsQuerySelector = "h1, h2, h3, h4, h5, h6"
+const headingsQuerySelector = 'h1, h2, h3, h4, h5, h6'
 
 describe('(nested) div section', () => {
   it('has h1s', () => {
-    const query = querySelector(gql`
+    const query = querySelector(
+      gql`
     {
       section: one(s: "section") {
         headings: all(s: "${headingsQuerySelector}")
       }
-    }`, rootDiv)
+    }`,
+      rootDiv,
+    )
 
     const headings = section.querySelectorAll(headingsQuerySelector)
     expect(query.section.headings).toStrictEqual(headings)
   })
 
   it('has h1 spans and italics', () => {
-    const query = querySelector(gql`
+    const query = querySelector(
+      gql`
     {
       section: one(s: "section") {
         headings: all(s: "${headingsQuerySelector}") {
@@ -83,7 +89,9 @@ describe('(nested) div section', () => {
         }
         spans: all(s: "span")
       }
-    }`, rootDiv)
+    }`,
+      rootDiv,
+    )
 
     expect(query.section.headings.spans).toStrictEqual([h1Span, h2Span])
     expect(query.section.spans[2]).toBe(sectionSpan)
@@ -93,16 +101,28 @@ describe('(nested) div section', () => {
 
 describe('errors', () => {
   test('on invalid field', () => {
-    expect(() => querySelector(gql`
-      {
-        section: invalid(s: "a")
-      }`, rootDiv)).toThrow(invalidFieldNameError)
+    expect(() =>
+      querySelector(
+        gql`
+          {
+            section: invalid(s: "a")
+          }
+        `,
+        rootDiv,
+      ),
+    ).toThrow(invalidFieldNameError)
   })
 
   test('when no selector arg is passed', () => {
-    expect(() => querySelector(gql`
-    {
-      section: one(q: "section")
-    }`, rootDiv)).toThrow(noSelectorArgError)
+    expect(() =>
+      querySelector(
+        gql`
+          {
+            section: one(q: "section")
+          }
+        `,
+        rootDiv,
+      ),
+    ).toThrow(noSelectorArgError)
   })
 })
