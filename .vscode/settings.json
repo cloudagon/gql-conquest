@@ -1,6 +1,6 @@
 {
   "eslint.workingDirectories": [
     ".",
-    "packages/query-selector"
+    "packages/query-selector",
   ],
 }

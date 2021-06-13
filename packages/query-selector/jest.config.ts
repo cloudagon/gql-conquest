@@ -8,9 +8,6 @@ export default {
   moduleNameMapper: pathsToModuleNameMapper(
     JSON5.parse(fs.readFileSync('tsconfig.json', 'utf-8')).compilerOptions
       .paths ?? {},
-    {
-      prefix: '<rootDir>',
-    },
   ),
   modulePaths: ['node_modules', 'src'],
   preset: 'ts-jest',
