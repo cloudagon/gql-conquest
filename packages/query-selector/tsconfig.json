@@ -2,16 +2,18 @@
   "compilerOptions": {                
     "target": "es5",                              
     "module": "commonjs",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "strict": true,                          
     "noImplicitAny": true,       
     "esModuleInterop": true,    
     "skipLibCheck": true,                          
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": true
   },
   "include": [
-    "**/*.ts"
+    "**/*.ts",
   ],
   "exclude": ["node_modules", "dist"]
 }

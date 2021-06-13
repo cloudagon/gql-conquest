@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
-import querySelector from 'src'
-import { invalidFieldNameError, noSelectorArgError } from 'src/errors'
+import querySelector from 'index'
+import { invalidFieldNameError, noSelectorArgError } from 'errors'
 
 const rootDiv = document.createElement('div')
 
