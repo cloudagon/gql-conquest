@@ -1,6 +1,6 @@
 {
   "name": "@gql-conquest/query-selector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Query your HTML using GraphQL. Replaces document.querySelector.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cloudagon/gql-conquest.git"
+    "url": "git+https://github.com/sachinraja/gql-conquest.git"
   },
   "keywords": [
     "graphql",
@@ -25,9 +25,9 @@
   "author": "Sachin Raja <sachinraja2349@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cloudagon/gql-conquest/issues"
+    "url": "https://github.com/sachinraja/gql-conquest/issues"
   },
-  "homepage": "https://github.com/cloudagon/gql-conquest#readme",
+  "homepage": "https://github.com/sachinraja/gql-conquest#readme",
   "devDependencies": {
     "graphql": "^15.5.0",
     "graphql-tag": "^2.12.4"
